@@ -3,6 +3,12 @@
 #written by the AQA Programmer Team
 #developed in the Python 3.9 programming environment
 
+#Implemented a 'booster' sqaure that awards additional points when occupied by a piece
+#Pretty simple to implement, copied the Kotla class and replaced with Booster. Still inherits from Square.
+#Two booster sqaures created in the __CreateBoard method. The squares are chosen in this method, but could easily be changed to allow user input or randomness.
+#GetPointsForOccupancy changed to award the player ten points for occupying their booster square.
+#Thats pretty much it
+
 import random
 
 class Dastan:
@@ -351,6 +357,7 @@ class Square:
         else:
             return False
         
+#New class for Booster sqaure based on Kotla clas. Inherits from Square.
 class Booster(Square):
     def __init__(self, P, S):
         super(Booster, self).__init__()
