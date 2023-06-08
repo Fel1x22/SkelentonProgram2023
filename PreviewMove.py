@@ -3,6 +3,8 @@
 #written by the AQA Programmer Team
 #developed in the Python 3.9 programming environment
 
+#Kinda similar to DisplayMove, but moves are only displayed if preview move (0) is chosen.
+
 import random
 
 class Dastan:
