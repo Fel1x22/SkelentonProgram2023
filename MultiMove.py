@@ -3,6 +3,10 @@
 #written by the AQA Programmer Team
 #developed in the Python 3.9 programming environment
 
+#Quite like this one, could maybe be in actual exam.
+#Allows user to access new option, 'MultiMove' which allows the user to make two subsequent moves in one turn.
+
+
 import random
 
 class Dastan:
@@ -129,9 +133,12 @@ class Dastan:
     
     def __MultiMove(self):
         print("Its multimovin time")
+        #User first picks both moves they wish to use.
         SquareIsValid = False
         MoveOne = int(input("Enter move 1:\n"))
         MoveTwo = int(input("Enter move 2:\n"))
+        #Basically just an extended version of the original code, where SquareIsValid and MoveLegal are used to decide if both moves are legal
+        #Suffers from same problems as original code, where entering an illegal square ends the turn
         while not SquareIsValid:
             StartSquareReference = self.__GetSquareReference("containing the piece to move")
             SquareIsValid = self.__CheckSquareIsValid(StartSquareReference, True)
