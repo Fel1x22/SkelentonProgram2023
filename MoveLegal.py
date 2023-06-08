@@ -3,6 +3,12 @@
 #written by the AQA Programmer Team
 #developed in the Python 3.9 programming environment
 
+#Ver simple, so unlikely to come up in actual Section D
+#However good for understanding how program works.
+#Switches loop for finishSqaure to be based on MoveLegal
+#This solves the problem of the player entering a square on the board that exists, but is illegal, and the program skipping their turn and not calculating their new points total.
+#Could maybe be a small 5 marker but not likely.
+
 import random
 
 class Dastan:
@@ -141,6 +147,8 @@ class Dastan:
             while not SquareIsValid:
                 StartSquareReference = self.__GetSquareReference("containing the piece to move")
                 SquareIsValid = self.__CheckSquareIsValid(StartSquareReference, True)
+            #Creates loop based on move legal instead of SqaureIsValid
+            #This means that the program only continues when the move is Valid AND Legal
             MoveLegal = False
             while not MoveLegal:
                 FinishSquareReference = self.__GetSquareReference("to move to")
