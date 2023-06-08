@@ -3,6 +3,8 @@
 #written by the AQA Programmer Team
 #developed in the Python 3.9 programming environment
 
+#Not Currently working, need to mess around with __CheckSquareInBounds and __CheckSquareIsValid
+
 import random
 
 class Dastan:
