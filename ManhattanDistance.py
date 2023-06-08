@@ -3,6 +3,10 @@
 #written by the AQA Programmer Team
 #developed in the Python 3.9 programming environment
 
+#Displays te manhattan distance covered by each move.
+#Not really much use, but kinda a building block for other more complex ideas, based on the manhattan distance covered by different moves.
+#Also has move display implemented so player can see which sqaures they can move to.
+
 import random
 
 class Dastan:
@@ -60,6 +64,8 @@ class Dastan:
                 Index = self.__GetIndexOfSquare(Row * 10 + Column)
                 print("|" + self._Board[Index].GetSymbol(), end="")
                 PieceInSquare = self._Board[Index].GetPieceInSquare()
+                #IMPORTANT LINE
+                #Checks that the square is on the board, there isnt a friendly piece in the square and that the player can reach that square with their chosen move.
                 if self.__CheckSquareIsValid(Row * 10 + Column, False) and CurrentPlayer.CheckPlayerMove(Choice, StartSquareReference, Row * 10 + Column):
                     print("^", end="")
                 elif PieceInSquare is None:
