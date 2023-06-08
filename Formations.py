@@ -3,6 +3,12 @@
 #written by the AQA Programmer Team
 #developed in the Python 3.9 programming environment
 
+#Allows for the user to choose their piece formation at the start of the game.
+#Not too hard to implement, just time consuming.
+#Created a menu that appears before the not GameOver loop so that it only appears at the start of the game. This allows the users to choose their formations.
+#Each formation has its own method. In each method there are two lists, containing the row/col coordinates of the pieces for that formation.
+#Depending on which player selected the formation, their list is chosen and the pieces are created and added to self._Board
+
 import random
 
 class Dastan:
