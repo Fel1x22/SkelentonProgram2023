@@ -3,6 +3,8 @@
 #written by the AQA Programmer Team
 #developed in the Python 3.9 programming environment
 
+#Allows the user to save and load games as text files.
+
 import random
 
 class Dastan:
@@ -157,10 +159,13 @@ class Dastan:
 
     def SaveGameState(self):
         GameState = []
+        #Loops through each row and column to access every sqaure on the board
         for row in range(1, self._NoOfRows+1):
             for col in range(1, self._NoOfColumns+1):
+                #Finds the index of each square, then finds the piece in each square.
                 Index = self.__GetIndexOfSquare(row * 10 + col)
                 Piece = self._Board[Index].GetPieceInSquare()
+                #Appends each piece type to GameState list
                 if Piece == None:
                     GameState.append('N')
                 else:
@@ -168,15 +173,17 @@ class Dastan:
             
         fileName = input("Enter the name of the file \n")
         fileName += '.txt'
+        #Writes gamestate list to text file as string of symbols on one line
         with open(fileName, mode='w') as textFile:
             for piece in GameState:
                 textFile.write(piece)
     
     def LoadGameState(self, file):
+        #Opens the text file in read mode, then creates a list containing the loaded sqaures from the txt file.
         with open(file, 'r') as TextFile:
             LoadFile = list(TextFile.read())
             for PieceIndex in range(0, len(LoadFile)):
-                print(self._Board[PieceIndex])
+                #Options for the symbols from the txt file. If the symbol is 'N' then a space is added to the board, otherwise the piece in the square is created as an objecct as well as being added to the board
                 if LoadFile[PieceIndex] == 'N':
                     self._Board[PieceIndex].SetPiece('')
                 elif LoadFile[PieceIndex] == '!':
